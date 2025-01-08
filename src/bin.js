@@ -10,7 +10,7 @@ if (config?.webpack) {
   runWebpack(config.webpack);
   runWebpack({
     ...config.webpack,
-    minimizie: true,
+    minimize: true,
   });
 }
 if (config?.cWebpack) {

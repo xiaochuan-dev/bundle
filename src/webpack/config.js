@@ -2,9 +2,9 @@ const { join } = require('path');
 const compiledPath = join(__dirname, '../../compiled');
 
 function getConfig(_config) {
-  const { name, entry, minimizie, ...rest } = _config;
+  const { name, entry, minimize, ...rest } = _config;
 
-  const filename = !!minimizie ? 'index.min.js' : 'index.js';
+  const filename = !!minimize ? 'index.min.js' : 'index.js';
 
   /**
    * @type {import('webpack').Configuration}
