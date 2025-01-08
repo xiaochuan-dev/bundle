@@ -22,9 +22,9 @@
     "bundle": "./src/bin.js"
   },
   "files": [
-    "./src",
-    "./compiled",
-    "./compiled/node_modules"
+    "src",
+    "compiled",
+    "compiled/node_modules"
   ],
   "publishConfig": {
     "access": "public",
