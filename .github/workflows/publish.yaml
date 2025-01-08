@@ -20,7 +20,7 @@ jobs:
       - run: node --version
       - run: corepack enable
       - run: |
-          npm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+          echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' >> .npmrc
           npm publish 
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
