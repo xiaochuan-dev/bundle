@@ -2,6 +2,7 @@
   "name": "@xiaochuan-dev/bundle",
   "version": "0.0.6",
   "license": "MIT",
+  "main": "./src/bin.js",
   "scripts": {
     "format": "prettier src --write",
     "b0": "ncc build ./node_modules/typescript/lib/typescript.js -o ./compiled/node_modules/typescript",
