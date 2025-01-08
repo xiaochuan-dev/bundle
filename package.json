@@ -1,7 +1,6 @@
 {
   "name": "@xiaochuan-dev/bundle",
-  "version": "0.0.2",
-  "main": "index.js",
+  "version": "0.0.3",
   "license": "MIT",
   "scripts": {
     "format": "prettier src --write",
