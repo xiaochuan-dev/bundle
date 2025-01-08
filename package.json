@@ -1,6 +1,6 @@
 {
   "name": "@xiaochuan-dev/bundle",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "format": "prettier src --write",
@@ -22,9 +22,9 @@
     "bundle": "./src/bin.js"
   },
   "files": [
-    "src",
-    "compiled",
-    "compiled/node_modules"
+    "./src",
+    "./compiled",
+    "./compiled/node_modules"
   ],
   "publishConfig": {
     "access": "public",
