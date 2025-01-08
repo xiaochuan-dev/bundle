@@ -1,0 +1,51 @@
+{
+  "name": "@xiaochuan-dev/bundle",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier src --write",
+    "b0": "ncc build ./node_modules/typescript/lib/typescript.js -o ./compiled/node_modules/typescript",
+    "b1": "ncc build ./node_modules/ts-loader/index.js -e webpack -o ./compiled/node_modules/ts-loader",
+    "b2": "ncc build ./node_modules/webpack/lib/index.js -o ./compiled/node_modules/webpack",
+    "b3": "ncc build ./node_modules/rollup/dist/rollup.js -o ./compiled/node_modules/rollup",
+    "b4": "ncc build ./node_modules/@rollup/plugin-alias/dist/cjs/index.js -o ./compiled/node_modules/@rollup/plugin-alias",
+    "b5": "ncc build ./node_modules/@rollup/plugin-commonjs/dist/cjs/index.js -o ./compiled/node_modules/@rollup/plugin-commonjs",
+    "b6": "ncc build ./node_modules/@rollup/plugin-node-resolve/dist/cjs/index.js -o ./compiled/node_modules/@rollup/plugin-node-resolve",
+    "b7": "ncc build ./node_modules/@rollup/plugin-replace/dist/cjs/index.js -o ./compiled/node_modules/@rollup/plugin-replace",
+    "b8": "ncc build ./node_modules/@rollup/plugin-typescript/dist/cjs/index.js -e typescript -o ./compiled/node_modules/@rollup/plugin-typescript",
+    "b9": "ncc build ./node_modules/tslib -e typescript -o ./compiled/node_modules/@rollup/plugin-typescript",
+    "b10": "ncc build ./node_modules/@babel/core/lib/index.js -e typescript -o ./compiled/node_modules/@babel/core",
+    "b11": "ncc build ./node_modules/@babel/preset-flow/lib/index.js -e @babel/core -o ./compiled/node_modules/@babel/preset-flow",
+    "b12": "ncc build ./node_modules/babel-loader/lib/index.js -e @babel/core -e webpack -o ./compiled/node_modules/babel-loader"
+  },
+  "bin": {
+    "bundle": "./src/bin.js"
+  },
+  "files": [
+    "src",
+    "compiled",
+    "compiled/node_modules"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.9",
+    "@babel/preset-flow": "^7.24.7",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@vercel/ncc": "^0.38.1",
+    "babel-loader": "^9.1.3",
+    "prettier": "^3.4.2",
+    "rollup": "3.29.1",
+    "ts-loader": "^9.5.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0"
+  }
+}
