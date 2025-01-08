@@ -8,6 +8,10 @@ const config = getConfig();
 
 if (config?.webpack) {
   runWebpack(config.webpack);
+  runWebpack({
+    ...config.webpack,
+    minimizie: true,
+  });
 }
 if (config?.cWebpack) {
   runWebpackRow(config.cWebpack);

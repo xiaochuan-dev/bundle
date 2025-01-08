@@ -2,7 +2,9 @@ const { join } = require('path');
 const compiledPath = join(__dirname, '../../compiled');
 
 function getConfig(_config) {
-  const { name, entry, ...rest } = _config;
+  const { name, entry, minimizie, ...rest } = _config;
+
+  const filename = !!minimizie ? 'index.min.js' : 'index.js';
 
   /**
    * @type {import('webpack').Configuration}
@@ -12,7 +14,7 @@ function getConfig(_config) {
     entry,
     output: {
       path: join(process.cwd(), 'webpackBuild'),
-      filename: 'index.js',
+      filename,
       library: {
         name,
         type: 'umd',
@@ -20,7 +22,7 @@ function getConfig(_config) {
     },
     devtool: 'source-map',
     optimization: {
-      minimize: false,
+      minimize,
     },
     module: {
       rules: [
