@@ -1,13 +1,13 @@
 {
   "name": "@xiaochuan-dev/bundle",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "main": "./compiled/node_modules/webpack",
   "scripts": {
     "format": "prettier src --write",
     "b0": "ncc build ./node_modules/typescript/lib/typescript.js -o ./compiled/node_modules/typescript",
     "b1": "ncc build ./node_modules/ts-loader/index.js -e webpack -o ./compiled/node_modules/ts-loader",
-    "b2": "ncc build ./node_modules/webpack/lib/index.js -o ./compiled/node_modules/webpack",
+    "b2": "ncc build ./node_modules/webpack/lib/index.js -e worker_threads -e node:worker_threads -e stream -e node:stream -o ./compiled/node_modules/webpack",
     "b3": "ncc build ./node_modules/rollup/dist/rollup.js -o ./compiled/node_modules/rollup",
     "b4": "ncc build ./node_modules/@rollup/plugin-alias/dist/cjs/index.js -o ./compiled/node_modules/@rollup/plugin-alias",
     "b5": "ncc build ./node_modules/@rollup/plugin-commonjs/dist/cjs/index.js -o ./compiled/node_modules/@rollup/plugin-commonjs",
