@@ -22,7 +22,7 @@ function getConfig(_config) {
     },
     devtool: 'source-map',
     optimization: {
-      minimize,
+      minimize: false,
     },
     module: {
       rules: [
